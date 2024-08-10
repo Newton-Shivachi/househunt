@@ -1,0 +1,17 @@
+{
+    "builds":[{
+        "src": "online/wsgi.py",
+        "use": "{@vercel/python}",
+        "config": { "maxLambdaSize":"15mb","runtime":"python3.12" }
+    }],
+    "routes":[{
+        "src": "/(.*)",
+        "dest": "online/wsgi.py"
+    }]
+}
+{
+    "scripts": {
+      "build": "python3 manage.py collectstatic --noinput"
+    }
+  }
+  
